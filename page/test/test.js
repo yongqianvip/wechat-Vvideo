@@ -1,21 +1,13 @@
 
 var API = require('../../util/api.js');
 Page({
-    data: {
-        
+
+	viewTap: function(e) {
+		console.log('banner tap ---> ',e.currentTarget.dataset.index) 
+	},
+    onLoad: function(options) {
+        // this.getBannerList(API.GET_BANNER_LIST_URL());
     },
-    upper: function(e) {
-      console.log('upper---> ',e)
-    },
-    lower: function(e) {
-      console.log('lower ---> ',e)
-    },
-    scroll: function(e) {
-      console.log('scroll ---> ',e)
-    },
-    bannerTap: function(e) {
-      console.log('banner tap ---> ',e) 
-    }
 });
 
 

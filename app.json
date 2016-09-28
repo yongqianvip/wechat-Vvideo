@@ -1,7 +1,8 @@
 {
   "pages": [
       "page/home/home",
-      "page/test/test"
+      "page/test/test",
+      "page/playview/playview"
   ],
   "window": {
     "navigationBarTextStyle": "black",

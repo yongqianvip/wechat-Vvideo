@@ -1,13 +1,20 @@
 
 <!--index.wxml-->
-<view class="container">
-    <view class="list">
-      <scroll-view id="main-scroll-id" scroll-y="true" class="main-scroll" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
-          <block wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}">     
-              <view bindtap="viewTap" class="latest-item">
-                  <view class="latest-item-image">{{ item }}</view>
-              </view>
-          </block>
-      </scroll-view>
-    </view>
+<view class="container" bindtap="viewTap">
+    <!-- <view class="list">
+		<swiper class="banner-view-content" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+		    <block wx:for="{{banners}}">
+		        <swiper-item>
+		            <image src="{{item}}" class="slide-image" bindtap="bannerTap" data-index="{{index}}"/>
+		        </swiper-item>
+		    </block>
+		</swiper>
+     	<scroll-view id="main-scroll-id" scroll-y="true" class="main-scroll" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+        	<block wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}">     
+				<view bindtap="viewTap" class="latest-item">
+					<view class="latest-item-image">{{ item }}</view>
+				</view>
+			</block>
+		</scroll-view>
+    </view> -->
 </view>
