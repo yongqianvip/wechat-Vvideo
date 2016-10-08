@@ -13,33 +13,43 @@ var CATE_LIST = "cate/getList";
 // 视频列表Tab
 var CATE_ITEMS_LIST = "post/getPostByTab";
 
-// 视频详情
-var VIDEO_SHOW = "post/view";
-
 // 选择频道
 var CHOOSE_CATE = "post/getPostInCate";
 
+// 视频详情
+var VIDEO_DETAIL = "post/view";
 
-
-
-// var HOST_URI = 'https://www.v2ex.com/api/';
 
 
 function _obj2uri(obj){
-	return Object.keys(obj).map(function(k) {
+	return obj ? ('?' + Object.keys(obj).map(function(k) {
 		return encodeURIComponent(k) + "=" + encodeURIComponent(obj[k]);
-	}).join('&');
+	}).join('&')) : '';
 }
 
 function GET_BANNER_LIST_URL(obj) {
-	return BASE_URL + GET_BANNER_LIST + (obj ? ('?' + _obj2uri(obj)) : '');
+	return BASE_URL + GET_BANNER_LIST + _obj2uri(obj);
 }
 
 function GET_CATE_ITEMS_LIST_URL(obj) {
-	return BASE_URL + CATE_ITEMS_LIST + (obj ? ('?' + _obj2uri(obj)) : '');	
+	return BASE_URL + CATE_ITEMS_LIST + _obj2uri(obj);
+}
+
+function GET_VIDEO_DETAIL_URL(obj) {
+	return BASE_URL + VIDEO_DETAIL + _obj2uri(obj);
+}
+
+function GET_CATE_LIST_URL(obj) {
+	return BASE_URL + CATE_LIST + _obj2uri(obj);
 }
 
 module.exports = {
 	GET_BANNER_LIST_URL: GET_BANNER_LIST_URL,
-	GET_CATE_ITEMS_LIST_URL: GET_CATE_ITEMS_LIST_URL
+	GET_CATE_ITEMS_LIST_URL: GET_CATE_ITEMS_LIST_URL,
+	GET_VIDEO_DETAIL_URL: GET_VIDEO_DETAIL_URL,
+	GET_CATE_LIST_URL: GET_CATE_LIST_URL
 }
+
+
+
+

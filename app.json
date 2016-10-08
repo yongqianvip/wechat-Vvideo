@@ -1,38 +1,44 @@
 {
-  "pages": [
-      "page/home/home",
-      "page/test/test",
-      "page/playview/playview"
-  ],
-  "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "微信小程序",
-    "navigationBarBackgroundColor": "#fbf9fe",
-    "backgroundColor": "#fbf9fe",
-    "backgroundTextStyle": "dark"
-  },
-  "tabBar": {
-    "color": "#dddddd",
-    "selectedColor": "#3cc51f",
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
-    "list": [{
-      "pagePath": "page/home/home",
-      "iconPath": "image/wechat.png",
-      "selectedIconPath": "image/wechatHL.png",
-      "text": "V电影"
-    },{
-      "pagePath": "page/test/test",
-      "iconPath": "image/wechat.png",
-      "selectedIconPath": "image/wechatHL.png",
-      "text": "playground"
-    }]
-  },
-  "networkTimeout": {
-    "request": 10000,
-    "connectSocket": 10000,
-    "uploadFile": 10000,
-    "downloadFile": 10000
-  },
-  "debug": true
+	"pages": [
+		"page/home/home",
+		"page/test/test",
+		"page/playview/playview",
+		"page/channel/channel"
+	],
+	"window": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "微信小程序",
+		"navigationBarBackgroundColor": "#fbf9fe",
+		"backgroundColor": "#fbf9fe",
+		"backgroundTextStyle": "dark"
+	},
+	"tabBar": {
+		"color": "#dddddd",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "page/home/home",
+			"iconPath": "image/wechat.png",
+			"selectedIconPath": "image/wechatHL.png",
+			"text": "V电影"
+		},{
+			"pagePath": "page/channel/channel",
+			"iconPath": "image/wechat.png",
+			"selectedIconPath": "image/wechatHL.png",
+			"text": "频道"
+		},{
+			"pagePath": "page/test/test",
+			"iconPath": "image/wechat.png",
+			"selectedIconPath": "image/wechatHL.png",
+			"text": "playground"
+		}]
+	},
+	"networkTimeout": {
+		"request": 10000,
+		"connectSocket": 10000,
+		"uploadFile": 10000,
+		"downloadFile": 10000
+	},
+	"debug": true
 }

@@ -1,7 +1,7 @@
 
 var API = require('../../util/api.js');
 var util = require('../../util/util.js');
-
+var APP = getApp();
 Page({
     data: {
         banners: [],
@@ -68,6 +68,8 @@ Page({
 		var index = e.currentTarget.dataset.index;
 		var postid = this.data.latestVideos[index].postid;
 		console.log("---=== >>>>>",postid);
+		APP.globalData.playViewPostID = postid;
+
 		wx.navigateTo({
 			url: '../playview/playview'
 		})

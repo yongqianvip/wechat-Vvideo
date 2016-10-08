@@ -1,0 +1,14 @@
+<view class="channle-list-container">
+	<scroll-view class="channel_scroll" scroll-y="true">
+		<view class="channel_scroll_view">
+			<block wx:for="{{ channels }}">
+				<view class="channel_item_container">
+					<image class="channel_image" src="{{ item.icon }}"/>
+					<view class="channel_title">
+						<text class="channle_title_text">#{{ item.catename }}#</text>
+					</view>
+				</view>
+			</block>
+		</view>
+	</scroll-view>
+</view>

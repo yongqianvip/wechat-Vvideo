@@ -1,4 +1,4 @@
-page {
+/*page {
   background-color: #fbf9fe;
   height: 100%;
 }
@@ -213,3 +213,4 @@ checkbox, radio{
 .section__ctn{
 
 }
+*/

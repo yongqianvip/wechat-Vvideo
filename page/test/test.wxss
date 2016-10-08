@@ -1,34 +1,52 @@
 /**index.wxss**/
-.container {
+/*.container {
     display: flex;
     height: 100%;
     justify-content: flex-start;
 }
 .list {
-    flex:1;
     display: flex;
-}
-.main-scroll {
     flex: 1;
+    background: yellow;
+    height: 100%;
+    flex-wrap: wrap;
 }
 
-.banner-view-content {
-    display: flex;
-    height: 200px;
-    width: 100%;
-    background: cadetblue;
-}
-.slide-image {
-    display: flex;
-    width: 100%;
-    mode: 'scaleToFill'
+.main_scroll {
+    flex: 1;
+    align-content: space-between;
+    flex-wrap: wrap;
 }
 
-.latest-item {
-    margin-bottom: 10px;
-    background: green;
-    height: 100px;
-    width: 100%;
+.item {
+    margin: 2rpx;
+    background: orange;
+    height: 270rpx;
+    width: 270rpx;
+    flex-wrap: wrap;
+}*/
+
+.container {
+
 }
+.list {
+    display: flex;
+    background: yellow;
+    flex-wrap: wrap;
+}
+.main_scroll {
+    display: flex;
+    flex-wrap: wrap;
+    background: orange;
+    height: 100%;
+}
+
+.item {
+    background: orange;
+    height: 375rpx;
+    width: 375rpx;
+    flex-wrap: wrap;
+}
+
 
 
