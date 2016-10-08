@@ -3,12 +3,13 @@
 		"page/home/home",
 		"page/test/test",
 		"page/playview/playview",
-		"page/channel/channel"
+		"page/channel/channel",
+		"page/channelList/channelList"
 	],
 	"window": {
-		"navigationBarTextStyle": "black",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "微信小程序",
-		"navigationBarBackgroundColor": "#fbf9fe",
+		"navigationBarBackgroundColor": "#000",
 		"backgroundColor": "#fbf9fe",
 		"backgroundTextStyle": "dark"
 	},

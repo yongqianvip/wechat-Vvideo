@@ -21,6 +21,21 @@ Page({
 			}
 		})
 	},
+	itemTap: function(e) {
+		var index = e.currentTarget.dataset.index;
+		console.log('channels item tap ---> ', index);	
+		console.log("--- ", this.data.channels[index]);
+		var choosedChannelObj = this.data.channels[index];
+
+		APP.globalData.choosedChannel = {
+			p: 1,
+			cateid: choosedChannelObj.cateid
+		};
+
+		wx.navigateTo({
+			url: '../channelList/channelList'
+		})
+	},
 	onLoad: function(options) {
 		this.getChannelList();
 	}

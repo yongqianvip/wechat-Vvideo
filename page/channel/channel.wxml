@@ -2,7 +2,7 @@
 	<scroll-view class="channel_scroll" scroll-y="true">
 		<view class="channel_scroll_view">
 			<block wx:for="{{ channels }}">
-				<view class="channel_item_container">
+				<view class="channel_item_container" bindtap="itemTap" data-index="{{index}}">
 					<image class="channel_image" src="{{ item.icon }}"/>
 					<view class="channel_title">
 						<text class="channle_title_text">#{{ item.catename }}#</text>

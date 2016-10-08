@@ -1,3 +1,15 @@
+<template name="video_view_temp">
+    <view bindtap="latestItemTap" class="latest-item" data-index="{{index}}">
+        <image src="{{item.image}}" class="latest-item-image"/>
+        <view class="latest-item-title">
+          <text class="latest-item-title-text">{{ item.title }}</text>
+        </view>
+        <view class="latest-item-duration">
+          <text class="latest-item-duration-text">{{ item.cates[0].catename + ' / ' + item.duration }}</text>
+        </view>
+    </view>
+</template>
+
 <view class="container">
     <view class="main-list">
         <scroll-view scroll-y="true" class="main-scroll" bindscrolltoupper="upper" bindscrolltolower="lower">
