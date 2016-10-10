@@ -1,0 +1,60 @@
+<view class="series_detail_conteiner">
+	<block wx:if="{{ gotVideo }}">
+		<video class="video_screen" src="{{ videObj.qiniu_url }}"></video>
+	</block>
+	<block wx:else>
+		<image class="video_screen" src="{{viewInfo.image}}"/>
+	</block>
+	<scroll-view class="posts_scroll" scroll-y="true">
+		<view class="posts_scroll_content">
+			<view class="series_item_title">
+				<text class="series_title_text">{{ videObj.title }}</text>
+			</view>
+			<text class="series_item_subtitle">{{ viewInfo.title }}</text>
+			<text class="series_item_subtitle">更新：{{ viewInfo.weekly }}</text>
+			<text class="series_item_subtitle">集数：更新至{{ viewInfo.update_to }}集</text>
+			<text class="series_item_subtitle">类型：{{ viewInfo.tag_name }}</text>
+			<text class="series_content_text">{{ viewInfo.content }}</text>
+			<view class="posts_list">
+				<scroll-view class="posts_list_top" scroll-x="true">
+					<view class="posts_scroll_view">
+						<block wx:for="{{ viewInfo.posts }}">
+							<view class="posts_item" bindtap="changeSelectedPostsItem" data-index="{{index}}">
+								<view wx:if="{{ index != 0 }}" class="posts_item_left"></view>
+								<view class="posts_item_right">
+									<block wx:if="{{ index == selectedPostsIndex }}">
+										<view class="posts_item_top">
+											<text class="posts_item_text" style="color: black">{{ item.from_to }}</text>
+										</view>
+										<view class="posts_item_bottom"></view>
+									</block>
+									<block wx:else>
+										<view class="posts_item_top">
+											<text class="posts_item_text">{{ item.from_to }}</text>
+										</view>
+									</block>
+								</view>
+								
+							</view>
+						</block>
+					</view>
+				</scroll-view>
+				<block wx:for="{{ viewInfo.posts[selectedPostsIndex].list }}">
+					<view class="post_video_item">
+						<view class="post_video_item_left">
+							<image class="post_video_item_screenshot" src="{{ item.thumbnail }}"/>
+						</view>
+						<view class="post_video_item_right">
+							<!-- <view class="post_video_title"> -->
+								<text class="post_video_title">第{{ item.number }}集：{{ item.title }}</text>
+							<!-- </view> -->
+							<!-- <view class="post_video_update_time"> -->
+								<text class="post_video_update_time">更新时间：{{ item.addtime }}</text>
+							<!-- </view> -->
+						</view>
+					</view>
+				</block>
+			</view>
+		</view>
+	</scroll-view>
+</view>

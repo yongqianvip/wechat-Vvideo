@@ -23,7 +23,7 @@ Page({
 						channelItems: res.data.data
 					})
 				} else {
-
+					// whatever
 				}
 			}
 		})
@@ -31,10 +31,21 @@ Page({
 	onLoad: function(options) {
 		this.getCurrentChannelList();
 	},
+	onReady: function(options) {
+		var obj = APP.globalData.choosedChannel;
+		wx.setNavigationBarTitle({
+		 	title: obj.catename
+		})
+	},
+	onShow: function(options) {
+		var obj = APP.globalData.choosedChannel;
+		wx.setNavigationBarTitle({
+		 	title: obj.catename
+		})
+	},
 	itemTap: function(e) {
 		var index = e.currentTarget.dataset.index;
 		var postid = this.data.channelItems[index].postid;
-		console.log("---=== >>>>>",postid);
 		APP.globalData.playViewPostID = postid;
 
 		wx.navigateTo({

@@ -1,0 +1,37 @@
+.series_list_container {
+    display: flex;
+    height: 100%;
+}
+.series_list_main_scroll_view {
+	display: flex;
+	flex: 1;
+}
+.series_list_main_scroll {
+	flex: 1;
+}
+.series_item {
+
+}
+.series_image {
+	width: 750rpx;
+	height: 350rpx;
+}
+
+.series_item_text {
+	display: flex;
+	flex-direction: column;
+	height: 110px;
+}
+
+.series_item_title {
+	padding: 10px 20px 10px 20px;
+}
+.series_item_info {
+	font-size: 12px;
+	padding-left:  20px;
+	color: gray;
+}
+.series_item_content {
+	font-size: 13px;
+	padding: 10px 20px 10px 20px;
+}

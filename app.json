@@ -4,11 +4,13 @@
 		"page/test/test",
 		"page/playview/playview",
 		"page/channel/channel",
-		"page/channelList/channelList"
+		"page/channelList/channelList",
+		"page/series/series",
+		"page/seriesDetail/seriesDetail"
 	],
 	"window": {
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "微信小程序",
+		"navigationBarTitleText": "V电影",
 		"navigationBarBackgroundColor": "#000",
 		"backgroundColor": "#fbf9fe",
 		"backgroundTextStyle": "dark"
@@ -28,6 +30,11 @@
 			"iconPath": "image/wechat.png",
 			"selectedIconPath": "image/wechatHL.png",
 			"text": "频道"
+		},{
+			"pagePath": "page/series/series",
+			"iconPath": "image/wechat.png",
+			"selectedIconPath": "image/wechatHL.png",
+			"text": "系列"
 		},{
 			"pagePath": "page/test/test",
 			"iconPath": "image/wechat.png",

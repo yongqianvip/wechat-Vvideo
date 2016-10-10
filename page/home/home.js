@@ -17,9 +17,20 @@ Page({
 		wx.request({
 	    	url: api,
 			success: (res) => {
-
+				var newBanners = [];
+				for (var i = 0; i < res.data.data.length; i++) {
+					if(res.data.data[i].extra_data.app_banner_type == '2'){
+						newBanners.push(res.data.data[i]);
+					}
+				};
+				// var newBanners = res.data.data.map(function(item){
+				// 	if (item.extra_data.app_banner_type == '2') {
+				// 		return item;
+				// 	};
+				// })
+				console.log("======> newBanners", newBanners);
 				that.setData({
-					banners: res.data.data
+					banners: newBanners
 				})
 			}
 		})
@@ -62,7 +73,19 @@ Page({
 		console.log('lower ---> ',e)
 	},
 	bannerTap: function(e) {
-		console.log('banner tap ---> ',e.currentTarget.dataset.index);	
+		var index = e.currentTarget.dataset.index;
+		console.log('banner tap ---> ',index);	
+		var tappedBannerObj = this.data.banners[index];
+		var app_banner_param = tappedBannerObj.extra_data.app_banner_param;
+		if (tappedBannerObj.extra_data.app_banner_type == '1') {
+			var toPlayBannerURL = app_banner_param
+
+		} else if (tappedBannerObj.extra_data.app_banner_type == '2') {
+			APP.globalData.playViewPostID = app_banner_param;
+			wx.navigateTo({
+				url: '../playview/playview'
+			})
+		}
 	},
 	latestItemTap: function(e) {
 		var index = e.currentTarget.dataset.index;

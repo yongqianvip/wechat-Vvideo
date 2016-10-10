@@ -8,7 +8,8 @@ Page({
 		series_postid: 0,
 		viewInfo: {},
 		videObj: {},
-		pastListIndex: 0
+		pastListIndex: 0,
+		selectedPostsIndex: 0
 	},
 	getSeriesVideo: function() {
 		var url = API.GET_SERIES_VIDEO({
@@ -48,7 +49,13 @@ Page({
 		})
 	},
 	onLoad: function(options) {
-		// this.getSeriesView();
+		this.getSeriesView();
+	},
+	changeSelectedPostsItem: function(e) {
+		var index = e.currentTarget.dataset.index;
+		this.setData({
+			selectedPostsIndex: index
+		})
 	}
 	
 })

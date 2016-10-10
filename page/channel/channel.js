@@ -29,7 +29,8 @@ Page({
 
 		APP.globalData.choosedChannel = {
 			p: 1,
-			cateid: choosedChannelObj.cateid
+			cateid: choosedChannelObj.cateid,
+			catename: choosedChannelObj.catename
 		};
 
 		wx.navigateTo({

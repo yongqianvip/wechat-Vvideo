@@ -1,0 +1,16 @@
+<view class="series_list_container">
+	<view class="series_list_main_scroll_view">
+		<scroll-view class="series_list_main_scroll" scroll-y="true">
+			<block wx:for="{{ seriesList }}">
+				<view class="series_item" bindtap="seriesItemClick" data-index="{{ index }}">
+					<image class="series_image" src="{{ item.image}}"/>
+					<view class="series_item_text">
+						<text class="series_item_title">{{ item.title }}</text>
+						<text class="series_item_info">已更新至{{ item.update_to }}集  {{ item.follower_num }}已订阅</text>
+						<text class="series_item_content">{{ item.content }}</text>
+					</view>
+				</view>
+			</block>
+		</scroll-view>
+	</view>
+</view>
