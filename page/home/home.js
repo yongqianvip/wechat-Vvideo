@@ -23,12 +23,6 @@ Page({
 						newBanners.push(res.data.data[i]);
 					}
 				};
-				// var newBanners = res.data.data.map(function(item){
-				// 	if (item.extra_data.app_banner_type == '2') {
-				// 		return item;
-				// 	};
-				// })
-				console.log("======> newBanners", newBanners);
 				that.setData({
 					banners: newBanners
 				})
@@ -46,7 +40,6 @@ Page({
 						console.log("item-- >" ,util.formatVideoTime(item.duration));
 						return item;
 					})
-				console.log("--------***** ->",newVideos);
 		        this.setData({
 					latestVideos: res.data.data
 				})
