@@ -40,17 +40,15 @@
 					</view>
 				</scroll-view>
 				<block wx:for="{{ viewInfo.posts[selectedPostsIndex].list }}">
-					<view class="post_video_item">
+					<view class="post_video_item" bindtap="playSelectedPostsVideo" data-index="{{ index }}">
 						<view class="post_video_item_left">
 							<image class="post_video_item_screenshot" src="{{ item.thumbnail }}"/>
+							<text class="post_video_item_duration">{{ item.duration }}</text>
+							<text wx:if="{{ playingSeriesID == item.series_postid }}" class="post_video_item_playing">正在播放</text>
 						</view>
 						<view class="post_video_item_right">
-							<!-- <view class="post_video_title"> -->
-								<text class="post_video_title">第{{ item.number }}集：{{ item.title }}</text>
-							<!-- </view> -->
-							<!-- <view class="post_video_update_time"> -->
-								<text class="post_video_update_time">更新时间：{{ item.addtime }}</text>
-							<!-- </view> -->
+							<text class="post_video_title">第{{ item.number }}集：{{ item.title }}</text>
+							<text class="post_video_update_time">更新时间：{{ item.addtime }}</text>
 						</view>
 					</view>
 				</block>

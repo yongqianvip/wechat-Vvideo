@@ -42,7 +42,7 @@ Page({
 			success: (res) => {
 				console.log('---latest video ',res.data);
 				var newVideos = res.data.data.map(function(item){
-						item.duration = util.formatVideoTime(parseInt(item.duration));
+						item.duration = util.formatVideoTime(item.duration);
 						console.log("item-- >" ,util.formatVideoTime(item.duration));
 						return item;
 					})

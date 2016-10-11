@@ -5,21 +5,20 @@ var APP = getApp();
 Page({
 	data: {
 		gotVideo: false,
-		series_postid: 0,
 		viewInfo: {},
 		videObj: {},
 		pastListIndex: 0,
-		selectedPostsIndex: 0
+		selectedPostsIndex: 0,
+		playingSeriesID: 0
 	},
-	getSeriesVideo: function() {
+	getSeriesVideo: function(postsID) {
 		var url = API.GET_SERIES_VIDEO({
-			series_postid: this.data.series_postid
+			series_postid: postsID
 		});
 		var that = this;
 		wx.request({
 	    	url: url,
 			success: (res) => {
-				console.log("^^^^^^^ res",res);
 				this.setData({
 					gotVideo: true,
 					videObj: res.data.data
@@ -37,12 +36,20 @@ Page({
 	    	url: url,
 			success: (res) => {
 				if (res.statusCode == 200) {
+					var newViewInfo = res.data.data;
+					newViewInfo.posts = newViewInfo.posts.map(function(item){
+						item.list = item.list.map(function(postsVideo){
+							postsVideo.duration = util.formatVideoTime2(postsVideo.duration);
+							return postsVideo;
+						});
+						return item;
+					});
+					var postsID = res.data.data.posts[0].list[0].series_postid;
 					that.setData({
 						viewInfo: res.data.data,
-						series_postid: res.data.data.posts[0].list[0].series_postid
+						playingSeriesID: postsID
 					})
-					console.log("res", res);
-					this.getSeriesVideo();
+					this.getSeriesVideo(postsID);
 				};
 				
 			}
@@ -56,6 +63,17 @@ Page({
 		this.setData({
 			selectedPostsIndex: index
 		})
+	},
+	playSelectedPostsVideo: function(e) {
+		var index = e.currentTarget.dataset.index;
+		var postsVideo = this.data.viewInfo.posts[this.data.selectedPostsIndex].list[index];
+		if (postsVideo.series_postid == this.data.playingSeriesID) {
+			return;
+		};
+		this.setData({
+			playingSeriesID: postsVideo.series_postid
+		})
+		this.getSeriesVideo(postsVideo.series_postid);
 	}
 	
 })

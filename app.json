@@ -16,29 +16,29 @@
 		"backgroundTextStyle": "dark"
 	},
 	"tabBar": {
-		"color": "#dddddd",
-		"selectedColor": "#3cc51f",
+		"color": "#8a8a8a",
+		"selectedColor": "#00bb9c",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [{
 			"pagePath": "page/home/home",
-			"iconPath": "image/wechat.png",
-			"selectedIconPath": "image/wechatHL.png",
+			"iconPath": "image/film64.png",
+			"selectedIconPath": "image/filmHL64.png",
 			"text": "V电影"
 		},{
 			"pagePath": "page/channel/channel",
-			"iconPath": "image/wechat.png",
-			"selectedIconPath": "image/wechatHL.png",
+			"iconPath": "image/channel64.png",
+			"selectedIconPath": "image/channelHL64.png",
 			"text": "频道"
 		},{
 			"pagePath": "page/series/series",
-			"iconPath": "image/wechat.png",
-			"selectedIconPath": "image/wechatHL.png",
+			"iconPath": "image/series64.png",
+			"selectedIconPath": "image/seriesHL64.png",
 			"text": "系列"
 		},{
 			"pagePath": "page/test/test",
-			"iconPath": "image/wechat.png",
-			"selectedIconPath": "image/wechatHL.png",
+			"iconPath": "image/playground64.png",
+			"selectedIconPath": "image/playgroundHL64.png",
 			"text": "playground"
 		}]
 	},
