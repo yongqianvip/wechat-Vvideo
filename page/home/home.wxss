@@ -13,13 +13,14 @@
 }
 .banner-view-content {
     display: flex;
-    height: 220px;
-    width: 100%;
-    background: cadetblue;
+    height: 422rpx;
+    width: 750rpx;
 }
 .slide-image {
+    height: 422rpx;
+    width: 750rpx;
     display: flex;
-    width: 100%;
+    flex: 1;
 }
 .latest-item {
     display: flex;

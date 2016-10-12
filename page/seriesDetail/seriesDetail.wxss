@@ -39,7 +39,8 @@
 .posts_list_top {
 	height: 44px;
 	width: 100%;
-	background: lightgray;
+	background: #eaeaea;
+	overflow: hidden;
 }
 .posts_scroll_view {
 	display: flex;
