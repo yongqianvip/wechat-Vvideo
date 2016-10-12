@@ -21,7 +21,8 @@ Page({
 			success: (res) => {
 				this.setData({
 					gotVideo: true,
-					videObj: res.data.data
+					videObj: res.data.data,
+					playingSeriesID: postsID
 				});
 			}
 		});
@@ -70,9 +71,6 @@ Page({
 		if (postsVideo.series_postid == this.data.playingSeriesID) {
 			return;
 		};
-		this.setData({
-			playingSeriesID: postsVideo.series_postid
-		})
 		this.getSeriesVideo(postsVideo.series_postid);
 	}
 	

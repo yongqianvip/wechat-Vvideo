@@ -6,7 +6,7 @@
 		<image class="video_screen" src="{{viewInfo.image}}"/>
 	</block>
 	<scroll-view class="posts_scroll" scroll-y="true">
-		<view class="posts_scroll_content">
+		<view wx:if="{{ viewInfo.title.length > 0 }}" class="posts_scroll_content">
 			<view class="series_item_title">
 				<text class="series_title_text">{{ videObj.title }}</text>
 			</view>

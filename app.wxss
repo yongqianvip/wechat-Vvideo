@@ -1,8 +1,8 @@
-/*page {
+page {
   background-color: #fbf9fe;
   height: 100%;
 }
-.container {
+/*.container {
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -70,7 +70,6 @@
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  width: 100%;
   border: 1px solid #eee;
 }
 .page-body-form-item {
@@ -209,8 +208,4 @@ checkbox, radio{
 .section_gap .section__title{
     padding-left: 0;
     padding-right: 0;
-}
-.section__ctn{
-
-}
-*/
+}*/

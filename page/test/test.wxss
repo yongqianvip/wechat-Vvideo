@@ -1,7 +1,16 @@
-.container {
+.view1 {
     display: flex;
-    background: orange;
-    flex-direction: column;
+    height: 100%;
     flex: 1;
-    width: 100%;
+    background: orange;
+}
+.view11 {
+    flex: 1;
+    background: gray;
+
+}
+.view12 {
+    flex: 1;
+
+    background: yellow;
 }

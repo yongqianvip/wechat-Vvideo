@@ -1,3 +1,14 @@
-<view class="container">
-	
+<view class="series_detail_conteiner">
+<!-- 	<image class="video_screen" src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071002.png"/>
+	<view class="posts_scroll" scroll-y="true">
+		<view class="posts_scroll_content">
+			<text class="series_item_subtitle">类型：viewInfo.tag_name</text>
+			<text class="series_item_subtitle">类型：viewInfo.tag_name</text>
+			<text class="series_item_subtitle">类型：viewInfo.tag_name</text>
+		</view>
+	</view> -->
+	<view class="view1">
+		<view class="view11"></view>
+		<view class="view12"></view>
+	</view>
 </view>
