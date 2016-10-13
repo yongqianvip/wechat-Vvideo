@@ -8,10 +8,10 @@
     flex: 1;
     display: flex;
 }
-.main-scroll {
+.main_scroll {
     flex: 1;
 }
-.banner-view-content {
+.banner_view_content {
     display: flex;
     height: 422rpx;
     width: 750rpx;
@@ -57,4 +57,20 @@
 }
 .latest-item-duration-text {
     font-size: 12px;
-} 
+}
+
+.loading_more_view {
+    display: flex;
+    flex: 1;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+}
+
+.loagding_more_image {
+    height: 10px;
+    width: 500rpx;
+}
+
+
+

@@ -12,8 +12,8 @@
 
 <view class="container">
     <view class="main-list">
-        <scroll-view scroll-y="true" class="main-scroll" bindscrolltoupper="upper" bindscrolltolower="lower">
-            <swiper class="banner-view-content" id="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <scroll-view scroll-y="true" class="main_scroll" bindscrolltoupper="upper" bindscrolltolower="lower">
+            <swiper class="banner_view_content" id="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
                 <block wx:for="{{banners}}">
                     <swiper-item>
                         <image src="{{item.image}}" class="slide-image" catchtap="bannerTap" data-index="{{index}}"/>
@@ -29,6 +29,17 @@
                     <view class="latest-item-duration">
                       <text class="latest-item-duration-text">{{ item.cates[0].catename + ' / ' + item.duration }}</text>
                     </view>
+                </view>
+            </block>
+            <block wx:if="{{ latestVideos.length > 0 }}">
+                <view wx:if="{{ loadMoreType == 1 }}" class="loading_more_view">
+                    <image src="../../image/loading.gif" class="loagding_more_image"/>
+                </view>
+                <view wx:elif="{{ loadMoreType == 2 }}" class="loading_more_view">
+                    <button size="mini" bindtap="getLatestVideoList">点击加载更多</button>
+                </view>
+                <view wx:else class="loading_more_view">
+                    <text>已加载全部</text>
                 </view>
             </block>
         </scroll-view>

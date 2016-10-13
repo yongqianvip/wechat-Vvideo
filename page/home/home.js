@@ -2,6 +2,7 @@
 var API = require('../../util/api.js');
 var util = require('../../util/util.js');
 var APP = getApp();
+var allVideoList = [];
 Page({
     data: {
         banners: [],
@@ -10,10 +11,18 @@ Page({
 		autoplay: true,
 		interval: 5000,
 		duration: 1000,
-		toViewID: 'banner'
+		toViewID: 'banner',
+		loadMoreType: 1,
+		pageNo: 1,
+		isLoading: false
     },
-    getBannerList: function(api) {
+    //  loadMoreType 
+    //  1 显示 loading.gif
+    //  2 显示 点击加载更多 按钮
+    //  3 显示 已加载全部 文本
+    getBannerList: function() {
 		var that = this;
+		var api = API.GET_BANNER_LIST_URL();
 		wx.request({
 	    	url: api,
 			success: (res) => {
@@ -29,8 +38,12 @@ Page({
 			}
 		})
 	},
-	getLatestVideoList: function(api) {
+	getLatestVideoList: function() {
 		var that = this;
+		var api = API.GET_CATE_ITEMS_LIST_URL({
+			p: this.data.pageNo,
+			tab: "latest"
+		});
 		wx.request({
 	    	url: api,
 			success: (res) => {
@@ -40,23 +53,29 @@ Page({
 						console.log("item-- >" ,util.formatVideoTime(item.duration));
 						return item;
 					})
+				var currentPageNo = this.data.pageNo;
+				allVideoList = allVideoList.concat(newVideos)
 		        this.setData({
-					latestVideos: res.data.data
+					latestVideos: allVideoList,
+					pageNo: currentPageNo + 1,
+					isLoading: false
+				})
+			},
+			fail: () => {
+		        this.setData({
+					isLoading: false,
+					loadMoreType: 2
 				})
 			}
 		})
 	},
     onLoad: function(options) {
-    	console.log("GET_BANNER_LIST_URL----> ",API.GET_CATE_ITEMS_LIST_URL({
-			p: 1,
-			tab: "latest"
-		}));
-        this.getBannerList(API.GET_BANNER_LIST_URL());
-
-		this.getLatestVideoList(API.GET_CATE_ITEMS_LIST_URL({
-			p: 1,
-			tab: "latest"
-		}));
+    	
+        this.getBannerList();
+        this.setData({
+        	isLoading: true
+        });
+		this.getLatestVideoList();
     },
 	
 	upper: function(e) {
@@ -64,6 +83,16 @@ Page({
 	},
 	lower: function(e) {
 		console.log('lower ---> ',e)
+		if (this.data.isLoading) {
+			return;
+		};
+		if (this.data.loadMoreType == 1) {
+			this.getLatestVideoList();
+		} else if (this.data.loadMoreType == 2) {
+			return;
+		} else {
+
+		};
 	},
 	bannerTap: function(e) {
 		var index = e.currentTarget.dataset.index;
